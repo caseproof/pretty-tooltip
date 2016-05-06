@@ -55,7 +55,7 @@ class PrettyTooltip {
   }
 
   public static function get($title, $text, $opts=array()) {
-    $opts = shortcode_atts( self::atts(), $opts, 'pretty-tooltip' );
+    $opts = array_merge( self::atts(), $opts );
     $id = "pretty_tooltip_" . uniqid();
     $opts = (object)$opts;
 
